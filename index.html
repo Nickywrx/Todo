@@ -11,7 +11,7 @@
 	</head>
 	<body>
 	<!--对页面的主要操作-->
-		<section class="todoapp" ng-app="myTodo" ng-controller="todoCtrl">
+		<section class="todoapp" ng-app="myTodo" ng-controller="todoCtrl" ng-cloak>
 			<header class="header">
 				<h1>todo</h1>
 
@@ -34,11 +34,11 @@
 						</div>
 						<input class="edit" value="Create a TodoMVC template">
 					</li>-->
-					<li ng-repeat="use in todoList">
+					<li ng-repeat="todo in todoList track by $index">
 						<div class="view">
 							<input class="toggle" type="checkbox" >
-							<label> {{use.text}} </label>
-							<button class="destroy" ></button>
+							<label> {{todo.text}} </label>
+							<button class="destroy" ng-click="removeTodo(todo)"></button>
 						</div>
 						<input class="edit" value="Rule the web" >
 					</li>
