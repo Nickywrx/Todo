@@ -34,10 +34,10 @@
 						</div>
 						<input class="edit" value="Create a TodoMVC template">
 					</li>-->
-					<li ng-repeat="todo in todoList track by $index">
+					<li ng-class="{'completed':todo.status}" ng-repeat="todo in todoList track by $index">
 						<div class="view">
-							<input class="toggle" type="checkbox" >
-							<label> {{todo.text}} </label>
+							<input class="toggle" type="checkbox" ng-model="todo.status">
+							<label  ng-dblclick="editTodo()"> {{todo.text}} </label>
 							<button class="destroy" ng-click="removeTodo(todo)"></button>
 						</div>
 						<input class="edit" value="Rule the web" >

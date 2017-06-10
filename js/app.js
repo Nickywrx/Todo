@@ -37,6 +37,9 @@
                 $scope.todoList.splice(index,1);
 
             }
+
+
+
         })
 
 
