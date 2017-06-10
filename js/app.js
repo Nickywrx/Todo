@@ -38,7 +38,18 @@
 
             }
 
-
+            /*编辑数据*/
+            $scope.editing={};
+            $scope.editTodo=function(todo){
+                console.log('编辑触发了');
+                $scope.editing=todo;
+            }
+            /*失去焦点*/
+            $scope.blurTodo=function(){
+                console.log('失去焦点触发了');
+                console.log('编辑完成');
+                $scope.editing={};
+            }
 
         })
 
